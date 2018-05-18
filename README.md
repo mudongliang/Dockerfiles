@@ -27,3 +27,5 @@ docker login
 
 docker push
 ```
+
+If you have any problem about `docker` commands, you could refer to [Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet)
