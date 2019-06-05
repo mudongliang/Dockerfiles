@@ -1,15 +1,18 @@
 FROM ubuntu:14.04
 MAINTAINER "Dongliang Mu" <mudongliangabcd@gmail.com>
 RUN apt-get -y update && apt-get -y upgrade
-RUN apt-get install -y build-essential autoconf unzip gawk texinfo bison flex
+RUN apt-get install -y build-essential autoconf unzip gawk texinfo bison flex git
 
 WORKDIR /root/
 
 # Github repo is too big, so it's better to test it with local file
-COPY afl-pt.zip /root
-RUN unzip afl-pt.zip
+#COPY afl-pt.zip /root
+#RUN unzip afl-pt.zip
+#WORKDIR /root/afl-pt-master
 
-WORKDIR /root/afl-pt-master
+git clone https://github.com/junxzm1990/afl-pt
+
+WORKDIR /root/afl-pt
 
 #RUN cd pt; make -j$(nproc); ./reinstall_ptmod.sh
 
